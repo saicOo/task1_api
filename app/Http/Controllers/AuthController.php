@@ -31,7 +31,7 @@ return response($response,201);
             "email"=>"required|string",
             "password"=>"required|string",
         ]);
-        $user = User::where('email',$fileds['email'])->frist();
+        $user = User::where('email',$fileds['email'])->first();
         if(!$user || !Hash::check($fileds['password'],$user->$password)){
             return response([
                 "message"=>"Bad login"
